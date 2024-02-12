@@ -1,0 +1,49 @@
+# yt-dlp note
+
+## download single video, best resolution by default
+> yt-dlp <video_url>
+
+## download singe audio
+> yt-dlp -x --audio-format mp3 <video_url>
+
+## downlad member video, using web browser cookies
+> yt-dlp --cookies-from-browser firefox <video_url>
+> yt-dlp -f<id> <video_url>
+
+## check available resolutions
+> yt-dlp -F <video_url>
+
+[eg]
+> yt-dlp -F https://www.bilibili.com/video/BV1L4411S7As?p=1
+
+<out>
+[BiliBili] Extracting URL: https://www.bilibili.com/video/BV1L4411S7As?p=1
+[BiliBili] 1L4411S7As: Downloading webpage
+[BiliBili] BV1L4411S7As: Extracting videos in anthology
+[BiliBili] 63444697: Extracting chapters
+[BiliBili] Format(s) 1080P 高清, 720P 高清 are missing; you have to login or become premium member to download them. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies
+[info] Available formats for BV1L4411S7As_p1:
+ID    EXT RESOLUTION FPS |  FILESIZE  TBR PROTO | VCODEC         VBR ACODEC      ABR
+------------------------------------------------------------------------------------
+30216 m4a audio only     | ≈ 2.04MiB  67k https | audio only         mp4a.40.2   67k
+30280 m4a audio only     | ≈ 3.94MiB 130k https | audio only         mp4a.40.2  130k
+30011 mp4 640x360     29 | ≈ 5.28MiB 174k https | hev1.1.6.L120 174k video only
+30015 mp4 640x360     30 | ≈ 7.30MiB 240k https | avc1.64001E   240k video only
+30033 mp4 852x480     29 | ≈ 8.24MiB 271k https | hev1.1.6.L120 271k video only
+30032 mp4 852x480     30 | ≈11.53MiB 379k https | avc1.64001F   379k video only
+</out>
+
+## download specify resolution
+> yt-dlp -f<id> <video_url>
+> yt-dlp -f<id1>+<id2> <video_url>
+[eg]
+> yt-dlp -f30280 https://www.bilibili.com/video/BV1L4411S7As?p=1
+
+## download entire playlist
+> yt-dlp <playlist_url>
+
+## using external downloader
+// todo
+
+## download using own list
+yt-dlp --cookies-from-browser firefox -x -i --batch-file='kudou-live-bgm.txt'
